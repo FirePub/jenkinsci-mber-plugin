@@ -1,0 +1,58 @@
+<!--
+The Jenkins Mber Plugin is free software distributed under the terms of the MIT
+license (http://opensource.org/licenses/mit-license.html) reproduced here:
+
+Copyright (c) 2013-2015 Mber
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:entry title="${%Application}" field="application">
+    <f:textbox />
+  </f:entry>
+  <f:entry title="${%Username}" field="username">
+    <f:textbox />
+  </f:entry>
+  <f:entry title="${%Password}" field="password">
+    <f:password />
+  </f:entry>
+  <f:validateButton title="${%Test Connection}" progress="${%Connecting...}" method="validateLogin" with="application,username,password" />
+  <f:entry title="${%Build Name}" field="buildName">
+    <f:textbox />
+  </f:entry>
+  <f:entry title="${%Build Description}" field="buildDescription">
+    <f:textbox />
+  </f:entry>
+  <f:optionalBlock title="${%Upload console output}" field="uploadConsoleLog" checked="${instance == null or instance.isUploadConsoleLog()}" inline="true" />
+  <f:optionalBlock title="${%Upload test results}" field="uploadTestResults" checked="${instance == null or instance.isUploadTestResults()}" inline="true" />
+  <f:optionalBlock title="${%Upload build artifacts}" field="uploadArtifacts">
+    <f:entry title="${%Files to upload}" field="buildArtifacts">
+      <f:expandableTextbox />
+    </f:entry>
+    <f:entry title="${%Destination folder}" field="artifactFolder">
+      <f:textbox default="${descriptor.getDefaultArtifactFolder()}" />
+    </f:entry>
+    <f:entry title="${%Tags}" field="artifactTags">
+      <f:expandableTextbox />
+    </f:entry>
+    <f:entry field="overwriteExistingFiles">
+      <f:checkbox title="${%Overwrite existing files}" />
+    </f:entry>
+  </f:optionalBlock>
+</j:jelly>
