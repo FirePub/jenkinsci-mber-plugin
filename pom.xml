@@ -31,7 +31,6 @@ THE SOFTWARE.
     <version>1.509.2</version>
   </parent>
 
-  <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>mber</artifactId>
   <version>1.0.0</version>
   <packaging>hpi</packaging>
