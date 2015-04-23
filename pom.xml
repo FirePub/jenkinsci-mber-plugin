@@ -42,7 +42,15 @@ THE SOFTWARE.
       <name>MIT license</name>
       <url>http://opensource.org/licenses/mit-license.html</url>
     </license>
- </licenses>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>onefrankguy</id>
+      <name>Frank Mitchell</name>
+      <email>fmitchell@mber.com</email>
+    </developer>
+  </developers>
 
   <dependencies>
     <dependency>
