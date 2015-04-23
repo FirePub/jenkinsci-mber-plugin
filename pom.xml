@@ -70,6 +70,12 @@ THE SOFTWARE.
     </dependency>
   </dependencies>
 
+  <scm>
+    <connection>scm:git:ssh://github.com/jenkinsci/mber-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/mber-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/mber-plugin</url>
+  </scm>
+
   <repositories>
     <repository>
       <id>repo.jenkins-ci.org</id>
