@@ -37,6 +37,13 @@ THE SOFTWARE.
   <name>Mber Plugin</name>
   <url>https://member.firepub.net</url>
 
+  <licenses>
+    <license>
+      <name>MIT license</name>
+      <url>http://opensource.org/licenses/mit-license.html</url>
+    </license>
+ </licenses>
+
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
