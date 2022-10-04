@@ -28,6 +28,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import net.sf.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
@@ -68,13 +69,7 @@ public class FileUploadCallableTest
 
   private File makeTempDir() throws IOException
   {
-    final File temp = File.createTempFile("temp", Long.toString(System.nanoTime()));
-    if (!temp.delete()) {
-      throw new IOException("Could not delete temp file: " + temp.getAbsolutePath());
-    }
-    if (!temp.mkdir()) {
-      throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
-    }
+    final File temp = Files.createTempDirectory("temp" + Long.toString(System.nanoTime())).toFile();
     Assert.assertTrue("Directory isn't a folder: " + temp.getAbsolutePath(), temp.isDirectory());
     return temp;
   }
