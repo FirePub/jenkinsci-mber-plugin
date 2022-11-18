@@ -30,6 +30,7 @@ import com.github.tomakehurst.wiremock.stubbing.Scenario;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.Date;
@@ -552,7 +553,7 @@ public class MberClientTest extends MberTest
     Stack<JSONObject> results = new Stack<JSONObject>();
 
     try {
-      File temp = File.createTempFile("jenkins-mber-plugin", "txt");
+      File temp = Files.createTempFile("jenkins-mber-plugin", "txt").toFile();
       BufferedWriter io = new BufferedWriter(new FileWriter(temp));
       io.write("This is an upload test for the Jenkins Mber Plugin.");
       io.close();
